@@ -1,8 +1,70 @@
+/* Background e estilos globais */
 body {
-    background: white url("images/background.gif") no-repeat;
-    background-size: fill;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
+/* Estilo para listas e links */
 li a {
-    color: green;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+li a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* Estilo para cabeçalhos */
+h1 {
+    color: #ffcc00;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Estilo para botões */
+input[type="submit"] {
+    background-color: #ffcc00;
+    color: #1e3c72;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #ffaa00;
+}
+
+/* Estilo para formulários */
+form {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Outros estilos */
+p {
+    font-size: 1.1em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
 }
