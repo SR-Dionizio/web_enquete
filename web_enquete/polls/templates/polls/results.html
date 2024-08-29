@@ -4,19 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-    <title>Vote Result</title>
+    <title>Resultado da Votação</title>
 </head>
 <body>
-<div class="container">
-    <h1>{{ question.question_text }}</h1>
-    <ul>
-        {% for choice in question.choice_set.all %}
-        <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-        {% endfor %}
-    </ul>
-    <form action="{% url 'polls:detail' question.id %}" method="get">
-        <input type="submit" value="Vote Again?" class="btn">
-    </form>
-</div>
+
+    <div class="top-right">
+        <form action="{% url 'polls:index' %}" method="get">
+            <input type="submit" value="Início" class="btn top-right-btn">
+        </form>
+    </div>
+
+    <div class="container">
+        <h1>{{ question.question_text }}</h1>
+        <ul>
+            {% for choice in question.choice_set.all %}
+            <li>{{ choice.choice_text }} -- {{ choice.votes }} voto{{ choice.votes|pluralize }}</li>
+            {% endfor %}
+        </ul>
+
+        <form action="{% url 'polls:detail' question.id %}" method="get">
+            <input type="submit" value="Votar Novamente?" class="btn">
+        </form>
+    </div>
 </body>
 </html>
